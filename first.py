@@ -1,10 +1,8 @@
-def sude_nebo_liche(cislo):
-    """
-    Upravte funkci tak, aby vypisovala, zda je cislo sude nebo liche
-    """
-    print(f"Cislo {cislo} je sude")
+cislo = int(input("Zadej celé číslo: "))
 
+if cislo % 2 == 0:
+    liche_nebo_sude = "sudé"
+else:
+    liche_nebo_sude = "liché"
 
-if __name__ == "__main__":
-    sude_nebo_liche(5)
-    sude_nebo_liche(1000000)
+print(f"Číslo {cislo} je {liche_nebo_sude}.")
