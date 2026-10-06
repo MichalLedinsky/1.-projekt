@@ -13,4 +13,4 @@ def je_delitelne_beze_zbytku(a, b):
         pass
 
     if __name__ == "__main__":
-        
+    
