@@ -1,17 +1,53 @@
-def vynasob_xty_prvek(seznam, cislo_prvku, x, nasobek):
-"""
-funkce vezme x-ty prvek ze seznamu(zadano jako 1 pro prvni prvek),
-vynasobi ho pomoci * nasobek a ulozi zpet do seznamu na puvodni pozici.
-Pozor, seznam muze mit mene prvku nez x
-"""
+def vynasob_xty_prvek(seznam, x, nasobek):
+    """
+    funkce vezme x-ty prvek ze seznamu(zadano jako 1 pro prvni prvek),
+    vynasobi ho pomoci * nasobek a ulozi zpet do seznamu na puvodni pozici.
+    Pozor, seznam muze mit mene prvku nez x
+    """
 
-return seznam
+    if len(seznam) <= x:
+        print("V seznamu neni dostatek prvku")
+        return seznam
+
+    x-= 1
+    if x < 0:
+        print("Zadany index je zaporny")
+        return seznam
+
+    seznam[x] *= nasobek
+    return seznam
+
+def spocitej_prumer(seznam):
+    """
+    funkce spocita prumer cisel v seznamu
+    """
+    pocet = len(seznam)
+    if pocet <= 0:
+        print("Seznam je prazdny")
+        return None
+    suma = sum(seznam)
+    return suma / pocet
 
 
-if __name_=="__main__":
+def formatuj_text(student):
+    znamky = student["znamky"]
+    prumer = spocitej_prumer(znamky)
+    prumer = round(prumer, 1)
+    return f"Jmeno: {student['jmeno']}, Prijmeni: {student['prijmeni']}, Vek: {student['vek']}, Znamky: {student['znamky']}, Prumer: {prumer}"
+  
 
-seznam = nynasob_xty_prvek([1, 2, 3, 4,], 3, 10)
-print(seznam) # [1, 2, 3, 4, 5]
+
+if __name__ == "__main__":
+
+    student = {"jmeno": "Jan", "prijmeni": "Novak", "vek": 21, "znamky": [1, 2, 1, 1, 3, 2]}
+    print(formatuj_text(student))
+
+    #seznam = vynasob_xty_prvek;([1, 2, 3, 4, 5], 3, 10)
+    #print(seznam) # [1, 2, 30, 4, 5]
+
+    #prumer=spocitej_prumer(seznam)
+    #print (prumer)
+
 
 #vek = input("Zadej svuj vek: ")
 #vek = 1
